@@ -118,7 +118,6 @@ CREATE TABLE IF NOT EXISTS `trabalho_final`.`Medico` (
   `escola_origem` VARCHAR(45) NOT NULL,
   `tipo_residencia_medica` VARCHAR(45) NOT NULL,
   `regime_trabalho` VARCHAR(45) NOT NULL,
-  `planos` VARCHAR(45) NULL,
   `fk_Funcionario_cod_funcionario` INT NOT NULL,
   INDEX `fk_Medico_Funcionario1_idx` (`fk_Funcionario_cod_funcionario` ASC) VISIBLE,
   PRIMARY KEY (`fk_Funcionario_cod_funcionario`),
@@ -151,7 +150,27 @@ CREATE TABLE IF NOT EXISTS `trabalho_final`.`Consulta` (
 ENGINE = InnoDB;
 
 
+-- -----------------------------------------------------
+-- Table `trabalho_final`.`Atende`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `trabalho_final`.`Atende` (
+  `fk_Plano_de_Saude_cod_plano_de_saude` INT NOT NULL,
+  `fk_Medico_fk_Funcionario_cod_funcionario` INT NOT NULL,
+  INDEX `fk_Atende_Plano_de_Saude1_idx` (`fk_Plano_de_Saude_cod_plano_de_saude` ASC) VISIBLE,
+  INDEX `fk_Atende_Medico1_idx` (`fk_Medico_fk_Funcionario_cod_funcionario` ASC) VISIBLE,
+  CONSTRAINT `fk_Atende_Plano_de_Saude1`
+    FOREIGN KEY (`fk_Plano_de_Saude_cod_plano_de_saude`)
+    REFERENCES `trabalho_final`.`Plano_de_Saude` (`cod_plano_de_saude`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Atende_Medico1`
+    FOREIGN KEY (`fk_Medico_fk_Funcionario_cod_funcionario`)
+    REFERENCES `trabalho_final`.`Medico` (`fk_Funcionario_cod_funcionario`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
-
