@@ -47,7 +47,8 @@
                           <li class="card-text">Médico: Nome, CRM, especialidade, data nascimento, escola de origem, tipo de residência médica, estado civil, regime de trabalho (prestador de serviço/funcionário), planos que atende</li>
                           <li class="card-text">Funcionários clínica:  nome, data nascimento, endereço, sexo, função, data de admissão, salario bruto, estado civil,  dependentes</li>
                           <li class="card-text">Informação de pagamento: valores recebidos por médico, comissão da clínica se houver, data do recebimento, data do repasse ao médico, imposto retido(5%)</li>
-                      </ol>
+						  <li class="card-text">Deverá implementar procedure, function, views e trigger, no mínimo uma para cada item</li>
+					  </ol>
                       <h5>Passos do trabalho:</h5>
                       <ol type="a">
                           <li class="card-text">Efetuar a modelagem lógica, física e conceitual, usando BrModelo (Não pode ser outro)</li>
