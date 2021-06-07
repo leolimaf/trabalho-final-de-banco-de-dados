@@ -1,9 +1,25 @@
 <?php
 session_start();
 
+// Dev
+// $host = 'localhost';
+// $db = 'trabalho_final';
+// $user = 'root';
+// $pass = '1234567';
+// $charset = 'utf8mb4';
+
+// Prod
+$host = 'us-cdbr-east-04.cleardb.com';
+$db = 'heroku_f99e851804e1149';
+$user = 'b3281b9403e458';
+$pass = '900a891a';
+$charset = 'utf8mb4';
+
+$dsn = "mysql:host=$host;dbname=$db;charset=$charset";
+
 try 
 {
-    $conn = new PDO("mysql:dbname=trabalho_final;host=localhost", "root", "1234567");
+    $conn = new PDO($dsn, $user, $pass);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } 
 catch (PDOException $erro) 

@@ -14,7 +14,7 @@
 </head>
 
 <body>
-  <?php require_once "<processa-dados-cliente.php" ?>
+  <?php require_once "processa-dados-cliente.php" ?>
   <div class="navbar navbar-expand-lg navbar-dark bg-primary">
     <div class="container">
       <a href="index.php" class="navbar-brand">Trabalho Final - Banco de Dados</a>
