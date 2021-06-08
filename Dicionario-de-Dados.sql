@@ -1,14 +1,112 @@
 insert into cliente (nome, endereco, estado_civil, idade, sexo, doenca_pre_existente, exames_realizados)
 values 
-('Alberto de Souza Ferreira', 'Rua Campanário nº 67 - Bairro São José, Belo Horizonte', 'Divorciado', '69', 'M', '0', null),
-('Ana Maria das Cruzes Teixeira', 'Rua Vila Nova nº 23 - Bairro Planalto, Belo Horizonte', 'Casada', '71', 'F', '0', null),
-('Luciana Batista Cardoso', 'Rua São Cristovão nº 44 - Bairro Cachoeirinha - Sabará', 'Casada', '66', 'F', '0', 'Angiografia pulmonar; Campimetria ocular'),
-('Sergio Luiz dos Santos', 'Rua Alvorada nº 134 - Bairro São Camilo, Belo Horizonte', 'Solteiro', '43', 'M', '0', null),
-('Laudenir Almeida Luxemburgo', 'Rua Olimpus nº 111 - Bairro Industrial, Contagem', 'Casado', '56', 'M', '1', 'Campimetria ocular'),
-('Glória Marçal Mendonça', 'Rua Alagoinhas nº 91 - Bairro Centro - Sabará', 'Casada', '59', 'F', '0', 'Espirometria'),
-('Nataniel Osório Cesário', 'Rua Santo Antônio nº 89 - Bairro São Francisco - Contagem', 'Solteiro', '48', 'M', '1', 'Eletroencefalograma com mapeamento cerebral'),
-('Dario Linhares Almeida', 'Rua Dona Albertina nº 51 - Bairro Centro - Betim', 'Casado', '53', 'M', '0', null),
-('Fátima Assis Salgueiro', 'Rua Argentina nº 21 - Bairro Nações Unidas - Sabará', 'Viúva', '76', 'F', '0', 'Angiografia pulmonar'),
-('Luís Araujo Carvalho', 'Rua Delfim Moreira nº 156 - Bairro Bela Vista - Belo Horizonte', 'Casado', '79', 'M', '0', null),
-('Gabriel Rodrigues Oliveira', 'Rua São Januário nº 268 - Bairro Vila Velha - Sabará', 'Viúvo', '81', 'M', '0', 'Eletroencefalograma com mapeamento cerebral'),
-('Fernanda Barros Rodrigues', 'Rua Travessa Buenópolis nº 183 - Bairro Vila Nossa Senhora da Aparecida - Belo Horizonte', 'Casada', '63', 'F', '0', null);
+('Alberto de Souza Ferreira', 'Rua CampanÃ¡rio nÂº 67 - Bairro SÃ£o JosÃ©, Belo Horizonte', 'Divorciado', '69', 'M', '0', null),
+('Ana Maria das Cruzes Teixeira', 'Rua Vila Nova nÂº 23 - Bairro Planalto, Belo Horizonte', 'Casada', '71', 'F', '0', null),
+('Luciana Batista Cardoso', 'Rua SÃ£o CristovÃ£o nÂº 44 - Bairro Cachoeirinha, SabarÃ¡', 'Casada', '66', 'F', '0', 'Angiografia pulmonar; Campimetria ocular'),
+('Sergio Luiz dos Santos', 'Rua Alvorada nÂº 134 - Bairro SÃ£o Camilo, Belo Horizonte', 'Solteiro', '43', 'M', '0', null),
+('Laudenir Almeida Luxemburgo', 'Rua Olimpus nÂº 111 - Bairro Industrial, Contagem', 'Casado', '56', 'M', '1', 'Campimetria ocular'),
+('GlÃ³ria MarÃ§al MendonÃ§a', 'Rua Alagoinhas nÂº 91 - Bairro Centro - SabarÃ¡', 'Casada', '59', 'F', '0', 'Espirometria'),
+('Nataniel OsÃ³rio CesÃ¡rio', 'Rua Santo AntÃ´nio nÂº 89 - Bairro SÃ£o Francisco, Contagem', 'Solteiro', '48', 'M', '1', 'Eletroencefalograma com mapeamento cerebral'),
+('Dario Linhares Almeida', 'Rua Dona Albertina nÂº 51 - Bairro Centro , Betim', 'Casado', '53', 'M', '0', null),
+('FÃ¡tima Assis Salgueiro', 'Rua Argentina nÂº 21 - Bairro NaÃ§Ãµes Unidas , SabarÃ¡', 'ViÃºva', '76', 'F', '0', 'Angiografia pulmonar'),
+('LuÃ­s Araujo Carvalho', 'Rua Delfim Moreira nÂº 156 - Bairro Bela Vista , Belo Horizonte', 'Casado', '79', 'M', '0', null),
+('Gabriel Rodrigues Oliveira', 'Rua SÃ£o JanuÃ¡rio nÂº 268 - Bairro Vila Velha , SabarÃ¡', 'ViÃºvo', '81', 'M', '0', 'Eletroencefalograma com mapeamento cerebral'),
+('Fernanda Barros Rodrigues', 'Rua Travessa BuenÃ³polis nÂº 183 - Bairro Vila Nossa Senhora da Aparecida , Belo Horizonte', 'Casada', '63', 'F', '0', null);
+
+insert into funcionario (nome, data_nascimento, endereco, sexo, funcao, data_admissao, salario_bruto, estado_civil, dependentes) 
+values
+('FÃ¡bio Cunha Goncalves','1980-05-10', 'Rua Hugo Soares Fagundes nÂª 1271 - Bairro Gloria, SÃ£o Paulo', 'M', 'Faxineiro', '2000-10-10', '1500.20', 'Solteiro', '1'),
+('Melissa Santos Carvalho','1995-04-06', 'Rua Madre BÃ¡rbara Maix nÂª 70 - Bairro Bela Vista, Contagem', 'F', 'Recepcionista', '2018-05-20', '1542.54', 'Casada', '2'),
+('Victor Souza Gomes','1992-07-20', 'Rua A nÂª 225 - Bairro Assis, Rio de Janeiro', 'M', 'Recepcionista', '2020-05-15', '2000.20', 'Casado', '2'),
+('Ryan Gomes Melo','1986-07-16', 'Avenida Doutor Otaviano Pereira Mendes nÂª 1129 - Bairro Alvorada, Belo Horizonte', 'M', 'Assistente de RH', '2005-10-16', '3700.25', 'Casado', '3'),
+('FÃ¡bio Almeida Cardoso','1990-10-25', 'Quadra 110 Sul Avenida LO 3 nÂª 127  - Bairro Palmas, Rio de Janeiro ', 'M', 'Auxiliar administrativo', '2008-12-24', '3750.25', 'Solteiro', '1'),
+('Davi Rocha Santos','1970-02-21', 'PraÃ§a dos Diamantes nÂª 606 - Bairro Serra, Belo Horizonte', 'M', 'Oftamologista', '1995-01-01', '4000.10', 'Casado', '4'),
+('Lavinia Pinto Almeida','1990-04-04', 'Rodovia Mauro Miranda Madureira nÂª 121 - Bairro Amazonas, Betim ', 'F', 'Ginecologista', '2000-01-12', '7040.54', 'Casada', '2'),
+('JÃºlia Alves Castro','1985-04-10', 'Rua EugÃªnio ldefonso nÂª 1465 - Bairro Horto, SÃ£o Paulo', 'F', 'Enfermeira', '2005-07-22', '1600.40', 'Solteira', '1'),
+('Martim Silva Costa','1988-11-11', 'Rua Alcatifa nÂª 432 - Bairro Centro, Belo Horizonte', 'M', 'Cardiologista', '2015-07-22', '6601.42', 'Casado', '3'),
+('Joao Cardoso Martins','1960-05-06', 'Travessa Caxias nÂª 418 - Bairro Santa Tereza, Porto Alegre', 'M', 'CirurgiÃ£o PlÃ¡stico', '1990-01-04', '10000.12', 'Casado', '4'),
+('Rebeca Cardoso Goncalves','1994-02-14', 'Rua 42 nÂª 796 - Bairro Andradas , Manaus', 'F', 'Cardiologista', '2018-03-17', '2200.13', 'Solteira', '1'),
+('Alice Fernandes Pinto','1974-01-18', 'Rua JosÃ© BenÃ­cio nÂª 200 - Bairro Santos, SÃ£o Paulo', 'F', 'Oftamologista', '2000-10-25', '9800.19', 'Casada', '2'),
+('Arthur Barros Alves','1967-06-03','Rua Jornal MÃ¡rio GalvÃ£o nÂº 700 - Bairro Aparecida, Belo Horizonte', 'M', 'CirurgiÃ£o PlÃ¡stico', '2016-10-13', '9.020', 'Casado','4'),
+('Isabella Ferreira Souza','1975-08-21', 'Rua B nÂª 243 - Bairro Assis, Rio de Janeiro', 'F', 'Psiquiatra', '2021-01-19', '5000.20', 'Casada', '3'),
+('Lucas Barbosa Dias','1983-01-30', 'Rua Pouso Alegre nÂª 33 - Bairro Nova Almeida, Betim', 'M', 'Psiquiatra', '2018-01-21', '5000.20', 'Casado', '3');
+
+insert into plano_de_saude (nome, registro_anvisa, valor_consulta)
+values
+('SulAmÃ©rica', 'KJ45DW', '200.00'),
+('AssimSaÃºde', 'HI3Q7', '150.00'),
+('GreenLine', 'ART254', '155.99'),
+('Bradesco', 'BR2W33', '100.98'),
+('Amil', 'ART21Q', '255.55'),
+('Hapvida', 'HPU772' , '180.80');
+
+insert into informacoes_de_pagamento (valor_recebido, comissao_clinica, data_recebimento, data_repasse, imposto_retido, fk_Funcionario_cod_funcionario, fk_Plano_de_Saude_cod_plano_de_saude)
+values
+('30.22', '10.00', '2021-05-06', '2021-05-20', default, '5', '3'), 
+('40.58', '05.10', '2021-06-01', '2021-06-03', default, '2', '6'),
+('50.58', '10.01', '2021-01-20', '2021-02-01', default, '12', '1'),
+('30.10', '05.80', '2021-04-01', '2021-04-03', default, '11', '4'),
+('50.18', '08.14', '2021-03-20', '2021-03-29', default, '1', '5'),
+('45.16', '06.18', '2021-02-15', '2021-02-25', default, '10', '2'),
+('80.00', '20.00', '2021-05-12', '2021-05-18', default, '8', '5'),
+('100.00','56.00', '2021-01-01', '2021-01-07', default, '3', '1'),
+('10.00', '01.20', '2021-02-07', '2021-002-14', default, '2', '3'),
+('37.88', '10.77', '2021-04-05', '2021-04-18', default, '7', '2'),
+('40.00', '25.00', '2021-03-10', '2021-03-20', default, '4', '6'),
+('78.55', '40.33', '2021-06-01', '2021-06-05', default, '6', '3');
+
+insert into possui (fk_Cliente_cod_cliente, fk_Plano_de_Saude_cod_plano_de_saude)
+values
+('1', '2'),
+('5', '3'),
+('1', '1'),
+('6', '6'),
+('7', '2'),
+('8', '4'),
+('9', '5'),
+('4', '2'),
+('2', '6'),
+('10', '5'),
+('7', '4'),
+('3', '3'),
+('11', '1'),
+('12', '2'),
+('5', '4'),
+('11', '3');
+
+insert into medico (crm, especialidade, escola_origem, tipo_residencia_medica, regime_trabalho,fk_Funcionario_cod_funcionario)
+values
+('M4578', 'Ortopedia', 'UFMG', 'Ortopedia', 'Integral',  '6'),
+('M2317', 'Clinico Geral', 'USP', 'Pediatria', 'Diurno', '7'),
+('M1780', 'Psicologia', 'UFMG', 'Psicologia', 'Noturno', '8'),
+('M4200', 'Psiquiatria', 'UFRJ', 'Psiquiatria', 'Integral', '9'),
+('M7563', 'Cirurgiao', 'PUC', 'Clinico Geral', 'Diurno', '10'),
+('M8546', 'Psicologia', 'USP', 'Psicologia', 'Noturno', '11'), 
+('M3457', 'Ortopedia', 'UFMG', 'Ortopedia', 'Noturno', '12'), 
+('M2891', 'Clinico Heral', 'PUC', 'Ortopedia', 'Integral', '13'),
+('M4579', 'Psiquaitria', 'USP', 'Psiquiatria', 'Diurno', '14'), 
+('M3754', 'Clinico Geral', 'UNI', 'Clinico Geral', 'Integral', '15');
+
+insert into atende (fk_Plano_de_Saude_cod_plano_de_saude, fk_Medico_fk_Funcionario_cod_funcionario)
+values
+('3', '6'),
+('1', '7'),
+('6', '8'),
+('1', '9'),
+('2', '10'),
+('4', '11'),
+('3', '12'),
+('6', '13'),
+('5', '14'),
+('5', '15'),
+('2', '15'),
+('4', '14'),
+('3', '13'),
+('6', '12'),
+('1', '7'),
+('4', '8'),
+('2', '9'),
+('6', '10'),
+('3', '10'),
+('4', '7'),
+('3', '7');
