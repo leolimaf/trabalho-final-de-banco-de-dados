@@ -1,4 +1,5 @@
-insert into cliente (nome, endereco, estado_civil, idade, sexo, doenca_pre_existente, exames_realizados)
+/* Entidades */
+insert into Cliente (nome, endereco, estado_civil, idade, sexo, doenca_pre_existente, exames_realizados)
 values 
 ('Alberto de Souza Ferreira', 'Rua Campanário nº 67 - Bairro São José, Belo Horizonte', 'Divorciado', '69', 'M', '0', null),
 ('Ana Maria das Cruzes Teixeira', 'Rua Vila Nova nº 23 - Bairro Planalto, Belo Horizonte', 'Casada', '71', 'F', '0', null),
@@ -13,7 +14,7 @@ values
 ('Gabriel Rodrigues Oliveira', 'Rua São Januário nº 268 - Bairro Vila Velha , Sabará', 'Viúvo', '81', 'M', '0', 'Eletroencefalograma com mapeamento cerebral'),
 ('Fernanda Barros Rodrigues', 'Rua Travessa Buenópolis nº 183 - Bairro Vila Nossa Senhora da Aparecida , Belo Horizonte', 'Casada', '63', 'F', '0', null);
 
-insert into funcionario (nome, data_nascimento, endereco, sexo, funcao, data_admissao, salario_bruto, estado_civil, dependentes) 
+insert into Funcionario (nome, data_nascimento, endereco, sexo, funcao, data_admissao, salario_bruto, estado_civil, dependentes) 
 values
 ('Fábio Cunha Goncalves','1980-05-10', 'Rua Hugo Soares Fagundes nª 1271 - Bairro Gloria, São Paulo', 'M', 'Faxineiro', '2000-10-10', '1500.20', 'Solteiro', '1'),
 ('Melissa Santos Carvalho','1995-04-06', 'Rua Madre Bárbara Maix nª 70 - Bairro Bela Vista, Contagem', 'F', 'Recepcionista', '2018-05-20', '1542.54', 'Casada', '2'),
@@ -31,7 +32,7 @@ values
 ('Isabella Ferreira Souza','1975-08-21', 'Rua B nª 243 - Bairro Assis, Rio de Janeiro', 'F', 'Psiquiatra', '2021-01-19', '5000.20', 'Casada', '3'),
 ('Lucas Barbosa Dias','1983-01-30', 'Rua Pouso Alegre nª 33 - Bairro Nova Almeida, Betim', 'M', 'Psiquiatra', '2018-01-21', '5000.20', 'Casado', '3');
 
-insert into plano_de_saude (nome, registro_anvisa, valor_consulta)
+insert into Plano_de_Saude (nome, registro_anvisa, valor_consulta)
 values
 ('SulAmérica', 'KJ45DW', '200.00'),
 ('AssimSaúde', 'HI3Q7', '150.00'),
@@ -40,7 +41,7 @@ values
 ('Amil', 'ART21Q', '255.55'),
 ('Hapvida', 'HPU772' , '180.80');
 
-insert into informacoes_de_pagamento (valor_recebido, comissao_clinica, data_recebimento, data_repasse, imposto_retido, fk_Funcionario_cod_funcionario, fk_Plano_de_Saude_cod_plano_de_saude)
+insert into Informacoes_de_Pagamento (valor_recebido, comissao_clinica, data_recebimento, data_repasse, imposto_retido, fk_Funcionario_cod_funcionario, fk_Plano_de_Saude_cod_plano_de_saude)
 values
 ('30.22', '10.00', '2021-05-06', '2021-05-20', default, '5', '3'), 
 ('40.58', '05.10', '2021-06-01', '2021-06-03', default, '2', '6'),
@@ -55,7 +56,21 @@ values
 ('40.00', '25.00', '2021-03-10', '2021-03-20', default, '4', '6'),
 ('78.55', '40.33', '2021-06-01', '2021-06-05', default, '6', '3');
 
-insert into possui (fk_Cliente_cod_cliente, fk_Plano_de_Saude_cod_plano_de_saude)
+insert into Medico (crm, especialidade, escola_origem, tipo_residencia_medica, regime_trabalho,fk_Funcionario_cod_funcionario)
+values
+('M4578', 'Ortopedia', 'UFMG', 'Ortopedia', 'Integral',  '6'),
+('M2317', 'Clinico Geral', 'USP', 'Pediatria', 'Diurno', '7'),
+('M1780', 'Psicologia', 'UFMG', 'Psicologia', 'Noturno', '8'),
+('M4200', 'Psiquiatria', 'UFRJ', 'Psiquiatria', 'Integral', '9'),
+('M7563', 'Cirurgiao', 'PUC', 'Clinico Geral', 'Diurno', '10'),
+('M8546', 'Psicologia', 'USP', 'Psicologia', 'Noturno', '11'), 
+('M3457', 'Ortopedia', 'UFMG', 'Ortopedia', 'Noturno', '12'), 
+('M2891', 'Clinico Heral', 'PUC', 'Ortopedia', 'Integral', '13'),
+('M4579', 'Psiquaitria', 'USP', 'Psiquiatria', 'Diurno', '14'), 
+('M3754', 'Clinico Geral', 'UNI', 'Clinico Geral', 'Integral', '15');
+
+/* Relacionamentos */
+insert into Possui (fk_Cliente_cod_cliente, fk_Plano_de_Saude_cod_plano_de_saude)
 values
 ('1', '2'),
 ('5', '3'),
@@ -74,20 +89,7 @@ values
 ('5', '4'),
 ('11', '3');
 
-insert into medico (crm, especialidade, escola_origem, tipo_residencia_medica, regime_trabalho,fk_Funcionario_cod_funcionario)
-values
-('M4578', 'Ortopedia', 'UFMG', 'Ortopedia', 'Integral',  '6'),
-('M2317', 'Clinico Geral', 'USP', 'Pediatria', 'Diurno', '7'),
-('M1780', 'Psicologia', 'UFMG', 'Psicologia', 'Noturno', '8'),
-('M4200', 'Psiquiatria', 'UFRJ', 'Psiquiatria', 'Integral', '9'),
-('M7563', 'Cirurgiao', 'PUC', 'Clinico Geral', 'Diurno', '10'),
-('M8546', 'Psicologia', 'USP', 'Psicologia', 'Noturno', '11'), 
-('M3457', 'Ortopedia', 'UFMG', 'Ortopedia', 'Noturno', '12'), 
-('M2891', 'Clinico Heral', 'PUC', 'Ortopedia', 'Integral', '13'),
-('M4579', 'Psiquaitria', 'USP', 'Psiquiatria', 'Diurno', '14'), 
-('M3754', 'Clinico Geral', 'UNI', 'Clinico Geral', 'Integral', '15');
-
-insert into atende (fk_Plano_de_Saude_cod_plano_de_saude, fk_Medico_fk_Funcionario_cod_funcionario)
+insert into Atende (fk_Plano_de_Saude_cod_plano_de_saude, fk_Medico_fk_Funcionario_cod_funcionario)
 values
 ('3', '6'),
 ('1', '7'),
@@ -110,3 +112,28 @@ values
 ('3', '10'),
 ('4', '7'),
 ('3', '7');
+
+insert into Consulta(fk_Medico_fk_Funcionario_cod_funcionario, fk_Cliente_cod_cliente)
+values
+('6','1'),
+('6','2'),
+('6','3'),
+('6','4'),
+('6','5'),
+('7','6'),
+('7','7'),
+('8','8'),
+('8','9'),
+('8','10'),
+('9','10'),
+('9','11'),
+('9','12'),
+('10','9'),
+('11','9'),
+('12','8'),
+('12','7'),
+('12','6'),
+('12','5'),
+('13','5'),
+('14','4'),
+('14','2');

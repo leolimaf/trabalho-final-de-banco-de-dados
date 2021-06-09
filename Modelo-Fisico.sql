@@ -134,16 +134,16 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `trabalho_final`.`Consulta` (
   `fk_Medico_fk_Funcionario_cod_funcionario` INT NOT NULL,
-  `Cliente_cod_cliente` INT NOT NULL,
+  `fk_Cliente_cod_cliente` INT NOT NULL,
   INDEX `fk_Consulta_Medico1_idx` (`fk_Medico_fk_Funcionario_cod_funcionario` ASC) VISIBLE,
-  INDEX `fk_Consulta_Cliente1_idx` (`Cliente_cod_cliente` ASC) VISIBLE,
+  INDEX `fk_Consulta_Cliente1_idx` (`fk_Cliente_cod_cliente` ASC) VISIBLE,
   CONSTRAINT `fk_Consulta_Medico1`
     FOREIGN KEY (`fk_Medico_fk_Funcionario_cod_funcionario`)
     REFERENCES `trabalho_final`.`Medico` (`fk_Funcionario_cod_funcionario`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_Consulta_Cliente1`
-    FOREIGN KEY (`Cliente_cod_cliente`)
+    FOREIGN KEY (`fk_Cliente_cod_cliente`)
     REFERENCES `trabalho_final`.`Cliente` (`cod_cliente`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
