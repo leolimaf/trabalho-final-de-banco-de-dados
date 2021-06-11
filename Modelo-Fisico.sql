@@ -87,7 +87,7 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `trabalho_final`.`Informacoes_de_Pagamento` (
   `cod_pagamento` INT NOT NULL AUTO_INCREMENT,
   `valor_recebido` DECIMAL(10,2) NOT NULL,
-  `comissao_clinica` DECIMAL(10,2) NULL,
+  `comissao_clinica` DECIMAL(10,2) NOT NULL DEFAULT 0.1,
   `data_recebimento` DATE NOT NULL,
   `data_repasse` DATE NOT NULL,
   `imposto_retido` DECIMAL(10,2) NOT NULL DEFAULT 0.05,

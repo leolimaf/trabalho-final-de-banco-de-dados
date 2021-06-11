@@ -43,31 +43,31 @@ values
 
 insert into Informacoes_de_Pagamento (valor_recebido, comissao_clinica, data_recebimento, data_repasse, imposto_retido, fk_Funcionario_cod_funcionario, fk_Plano_de_Saude_cod_plano_de_saude)
 values
-('30.22', '10.00', '2021-05-06', '2021-05-20', default, '5', '3'), 
-('40.58', '05.10', '2021-06-01', '2021-06-03', default, '2', '6'),
-('50.58', '10.01', '2021-01-20', '2021-02-01', default, '12', '1'),
-('30.10', '05.80', '2021-04-01', '2021-04-03', default, '11', '4'),
-('50.18', '08.14', '2021-03-20', '2021-03-29', default, '1', '5'),
-('45.16', '06.18', '2021-02-15', '2021-02-25', default, '10', '2'),
-('80.00', '20.00', '2021-05-12', '2021-05-18', default, '8', '5'),
-('100.00','56.00', '2021-01-01', '2021-01-07', default, '3', '1'),
-('10.00', '01.20', '2021-02-07', '2021-002-14', default, '2', '3'),
-('37.88', '10.77', '2021-04-05', '2021-04-18', default, '7', '2'),
-('40.00', '25.00', '2021-03-10', '2021-03-20', default, '4', '6'),
-('78.55', '40.33', '2021-06-01', '2021-06-05', default, '6', '3');
+('30.22', default, '2021-05-06', '2021-05-20', default, '5', '3'), 
+('40.58', default, '2021-06-01', '2021-06-03', default, '2', '6'),
+('50.58', default, '2021-01-20', '2021-02-01', default, '12', '1'),
+('30.10', default, '2021-04-01', '2021-04-03', default, '11', '4'),
+('50.18', '0.2', '2021-03-20', '2021-03-29', default, '1', '5'),
+('45.16', default, '2021-02-15', '2021-02-25', default, '10', '2'),
+('80.00', default, '2021-05-12', '2021-05-18', default, '8', '5'),
+('100.00',default, '2021-01-01', '2021-01-07', default, '3', '1'),
+('10.00', default, '2021-02-07', '2021-002-14', default, '2', '3'),
+('37.88', default, '2021-04-05', '2021-04-18', default, '7', '2'),
+('40.00', '0.3', '2021-03-10', '2021-03-20', default, '4', '6'),
+('78.55', default, '2021-06-01', '2021-06-05', default, '6', '3');
 
 insert into Medico (crm, especialidade, escola_origem, tipo_residencia_medica, regime_trabalho,fk_Funcionario_cod_funcionario)
 values
-('M4578', 'Ortopedia', 'UFMG', 'Ortopedia', 'Integral',  '6'),
-('M2317', 'Clinico Geral', 'USP', 'Pediatria', 'Diurno', '7'),
-('M1780', 'Psicologia', 'UFMG', 'Psicologia', 'Noturno', '8'),
-('M4200', 'Psiquiatria', 'UFRJ', 'Psiquiatria', 'Integral', '9'),
-('M7563', 'Cirurgiao', 'PUC', 'Clinico Geral', 'Diurno', '10'),
-('M8546', 'Psicologia', 'USP', 'Psicologia', 'Noturno', '11'), 
-('M3457', 'Ortopedia', 'UFMG', 'Ortopedia', 'Noturno', '12'), 
-('M2891', 'Clinico Heral', 'PUC', 'Ortopedia', 'Integral', '13'),
-('M4579', 'Psiquaitria', 'USP', 'Psiquiatria', 'Diurno', '14'), 
-('M3754', 'Clinico Geral', 'UNI', 'Clinico Geral', 'Integral', '15');
+('M4578', 'Ortopedia', 'UFMG', 'Ortopedia', 'Funcionario',  '6'),
+('M2317', 'Clinico Geral', 'USP', 'Pediatria', 'Prestador de Serviço', '7'),
+('M1780', 'Psicologia', 'UFMG', 'Psicologia', 'Funcionario', '8'),
+('M4200', 'Psiquiatria', 'UFRJ', 'Psiquiatria', 'Prestador de Serviço', '9'),
+('M7563', 'Cirurgiao', 'PUC', 'Clinico Geral', 'Funcionario', '10'),
+('M8546', 'Psicologia', 'USP', 'Psicologia', 'Prestador de Serviço', '11'), 
+('M3457', 'Ortopedia', 'UFMG', 'Ortopedia', 'Funcionario', '12'), 
+('M2891', 'Clinico Heral', 'PUC', 'Ortopedia', 'Prestador de Serviço', '13'),
+('M4579', 'Psiquaitria', 'USP', 'Psiquiatria', 'Funcionario', '14'), 
+('M3754', 'Clinico Geral', 'UNI', 'Clinico Geral', 'Funcionario', '15');
 
 /* Relacionamentos */
 insert into Possui (fk_Cliente_cod_cliente, fk_Plano_de_Saude_cod_plano_de_saude)
