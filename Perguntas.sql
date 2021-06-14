@@ -11,6 +11,7 @@ inner join informacoes_de_pagamento idp on f.cod_funcionario = idp.fk_Funcionari
 inner join medico m on f.cod_funcionario = m.fk_Funcionario_cod_funcionario;
 
 -- 4) Qual o valor arrecadado com comissões
+select sum(valor_recebido) as 'Valor arrecadado' from informacoes_de_pagamento;
 
 -- 5) Qual médico atende mais pacientes
 select fun.nome as 'Médico', count(*) as Atendimentos from funcionario fun
@@ -23,6 +24,15 @@ order by Atendimentos desc
 limit 1;
 
 -- 6) Qual especialidade atende mais e arrecada mais
+select med.especialidade as Especialidade, sum(pds.valor_consulta) as Lucro from medico med
+inner join consulta con on med.fk_Funcionario_cod_funcionario = con.fk_Medico_fk_Funcionario_cod_funcionario
+inner join cliente cli on cli.cod_cliente = con.fk_Cliente_cod_cliente
+inner join possui pos on cli.cod_cliente = pos.fk_Cliente_cod_cliente
+inner join plano_de_saude pds on pds.cod_plano_de_saude = pos.fk_Plano_de_Saude_cod_plano_de_saude
+group by med.especialidade
+having count(*) > 1
+order by Lucro desc
+limit 1;
 
 -- 8) Informações para planos de saúde: Quais planos são mais atendidos
 select pds.nome as 'Planos de Saúde', count(*) as Atendimentos from plano_de_saude pds
@@ -33,7 +43,7 @@ order by Atendimentos desc;
 
 -- 9) Qual a média e a mediana da idade dos pacientes
 -- Média
-select avg(c.idade) as 'Média' from cliente c
+select avg(c.idade) as 'Média' from cliente c;
 -- Mediana
 select c.idade as 'Mediana' from (select idade, 
 count(1) over (partition by 'A') as total_linhas, 
