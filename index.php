@@ -20,6 +20,17 @@
           <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ms-md-auto">
               <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" id="download">Modelo <span class="caret"></span></a>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" rel="noopener" href="modelos/modelo-conceitual.php">Conceitual</a>
+                  <a class="dropdown-item" href="modelos/modelo-logico.php">Lógico</a>
+                  <a class="dropdown-item" href="modelos/modelo-fisico.php">Físico</a>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="dicionario-de-dados.php">Dicionário de Dados</a>
+              </li>
+              <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" id="download">Cadastrar / Consultar <span class="caret"></span></a>
                 <div class="dropdown-menu">
                   <a class="dropdown-item" rel="noopener" href="cliente.php">Cliente</a>
