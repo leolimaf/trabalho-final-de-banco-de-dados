@@ -108,6 +108,16 @@ as select fun.nome as 'Médico', cli.nome as 'Paciente'  from funcionario fun
 inner join medico med on fun.cod_funcionario = med.fk_Funcionario_cod_funcionario
 left join consulta con on med.fk_Funcionario_cod_funcionario = con.fk_Medico_fk_Funcionario_cod_funcionario
 left join cliente cli on cli.cod_cliente = con.fk_Cliente_cod_cliente;
+
+select * from vw_medico_atende_paciente;
+
+-- Cliente
+create view vw_cliente_possui_plano_de_saude
+as select c.nome as 'Cliente', pds.nome as 'Plano de Saúde' from cliente as c
+inner join possui as p on c.cod_cliente = p.fk_Cliente_cod_cliente
+inner join plano_de_saude as pds on pds.cod_plano_de_saude = p.fk_Plano_de_Saude_cod_plano_de_saude;
+
+select * from vw_cliente_possui_plano_de_saude;
  
  -- TERMINAR e fazer function para Plano de Saúde
 -- 1) Quantas consultas foram realizadas num determinado período e os valores recebidos
