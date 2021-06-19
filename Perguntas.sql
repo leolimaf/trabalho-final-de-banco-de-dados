@@ -9,7 +9,6 @@ select fun.nome as 'Médico', cli.nome as 'Paciente'  from funcionario fun
 inner join medico med on fun.cod_funcionario = med.fk_Funcionario_cod_funcionario
 left join consulta con on med.fk_Funcionario_cod_funcionario = con.fk_Medico_fk_Funcionario_cod_funcionario
 left join cliente cli on cli.cod_cliente = con.fk_Cliente_cod_cliente;
-select * from vw_medico_atende_paciente;
 
 -- 3) Qual o valor pago a cada médico, menos a comissão
 select f.nome as 'Médico', (idp.valor_recebido ) as 'Valor recebido pelo médico menos a comissão' from funcionario f
@@ -53,7 +52,6 @@ delimiter ;
 call tratamento_menos_de_seis_meses(5);
 call tratamento_menos_de_seis_meses(2);
 call tratamento_menos_de_seis_meses(7);
-
 select c.nome as Paciente, if(c.doenca_pre_existente = '1', concat('O paciente em tratamento crônico não pode passar mais de 6 meses entre consultas'), null) as Mensagem 
 from cliente c;
 

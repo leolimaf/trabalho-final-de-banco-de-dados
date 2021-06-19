@@ -108,6 +108,7 @@ as select fun.nome as 'Médico', cli.nome as 'Paciente'  from funcionario fun
 inner join medico med on fun.cod_funcionario = med.fk_Funcionario_cod_funcionario
 left join consulta con on med.fk_Funcionario_cod_funcionario = con.fk_Medico_fk_Funcionario_cod_funcionario
 left join cliente cli on cli.cod_cliente = con.fk_Cliente_cod_cliente;
+
 select * from vw_medico_atende_paciente;
 
 -- Cliente
@@ -118,4 +119,24 @@ inner join plano_de_saude as pds on pds.cod_plano_de_saude = p.fk_Plano_de_Saude
 select * from vw_cliente_possui_plano_de_saude;
 
 -- Plano de Saúde
+/* Triggers */
+CREATE TABLE historico_cliente (
+    ID int NOT NULL AUTO_INCREMENT,
+    nome varchar(255),
+    idade int,
+    exames_realizados text,
+    cod_cliente int, 
+    primary key(ID));
+
+DELIMITER $$
+CREATE TRIGGER historico_cliente_excluido AFTER DELETE
+ON cliente
+FOR EACH ROW
+BEGIN
+    insert into historico_cliente (nome, idade, exames_realizados, cod_cliente)values( old.nome,old.idade,old.exames_realizados, old.cod_cliente);
+END$$
+DELIMITER ;
+
+delete from cliente where cod_cliente = '14';
+select * from cliente;
  
