@@ -51,7 +51,7 @@
                 <div class="card border-primary mt-5 mb-5">
                     <div class="card-header">Módulo de Gerenciamento</div>
                     <div class="card-body">
-                      <h4 class="card-title mb-3">Clínica de Consulta Médica - Modelo Físico</h4>
+                      <h4 class="card-title mb-3">Clínica de Consultas Médicas - Modelo Físico</h4>
                       <pre>-- MySQL Workbench Forward Engineering
 
 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;

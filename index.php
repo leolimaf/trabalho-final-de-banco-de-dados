@@ -51,7 +51,7 @@
                 <div class="card border-primary mt-5 mb-5">
                     <div class="card-header">Módulo de Gerenciamento</div>
                     <div class="card-body">
-                      <h4 class="card-title mb-3">Clínica de Consulta Médica</h4>
+                      <h4 class="card-title mb-3">Clínica de Consultas Médicas</h4>
                       <ol>
                           <li class="card-text">Cliente: nome, endereço, estado civil, idade, sexo, doença pré-existente, exames realizados</li>
                           <li class="card-text">Plano de Saúde: Nome, registro na ANVISA, valores pagos por consulta</li>

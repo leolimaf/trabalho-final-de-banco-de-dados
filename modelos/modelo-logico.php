@@ -51,7 +51,7 @@
                 <div class="card border-primary mt-5 mb-5">
                     <div class="card-header">Módulo de Gerenciamento</div>
                     <div class="card-body">
-                      <h4 class="card-title mb-3">Clínica de Consulta Médica - Modelo Lógico</h4>
+                      <h4 class="card-title mb-3">Clínica de Consultas Médicas - Modelo Lógico</h4>
                         <div class="d-flex justify-content-center">
                           <img class="img-fluid" src="../assets/img/Modelo-Logico.JPG" alt="Modelo Lógico">
                         </div>

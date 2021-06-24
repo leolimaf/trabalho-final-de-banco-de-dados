@@ -51,7 +51,7 @@
                 <div class="card border-primary mt-5 mb-5">
                     <div class="card-header">Módulo de Gerenciamento</div>
                     <div class="card-body">
-                        <h4 class="card-title mb-3">Clínica de Consulta Médica</h4>
+                        <h4 class="card-title mb-3">Clínica de Consultas Médicas</h4>
                         <pre>/* Entidades */
 insert into Cliente (nome, endereco, estado_civil, idade, sexo, doenca_pre_existente, exames_realizados)
 values 
