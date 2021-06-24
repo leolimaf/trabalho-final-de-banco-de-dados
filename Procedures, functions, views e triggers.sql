@@ -108,7 +108,6 @@ as select fun.nome as 'Médico', cli.nome as 'Paciente'  from funcionario fun
 inner join medico med on fun.cod_funcionario = med.fk_Funcionario_cod_funcionario
 left join consulta con on med.fk_Funcionario_cod_funcionario = con.fk_Medico_fk_Funcionario_cod_funcionario
 left join cliente cli on cli.cod_cliente = con.fk_Cliente_cod_cliente;
-
 select * from vw_medico_atende_paciente;
 
 -- Cliente
@@ -119,6 +118,25 @@ inner join plano_de_saude as pds on pds.cod_plano_de_saude = p.fk_Plano_de_Saude
 select * from vw_cliente_possui_plano_de_saude;
 
 -- Plano de Saúde
+create view vm_plano_de_saude_contido_em_inf_de_pagamento
+as select pds.nome as 'Plano de saúde', idp.cod_pagamento as 'Código do Pagamento'
+from plano_de_saude pds 
+inner join informacoes_de_pagamento idp on pds.cod_plano_de_saude = idp.fk_Plano_de_Saude_cod_plano_de_saude;
+select * from vm_plano_de_saude_contido_em_inf_de_pagamento;
+
+-- Informações de Pagamento
+create view vm_maior_valor_recebido
+as select max(valor_recebido) from informacoes_de_pagamento;
+select * from vm_maior_valor_recebido;
+
+-- Médico
+create view vw_medico_atende_plano
+as select fun.nome as 'Médico', pla.nome as 'Plano de Saúde'  from funcionario fun
+inner join medico med on fun.cod_funcionario = med.fk_Funcionario_cod_funcionario
+inner join atende ate on med.fk_Funcionario_cod_funcionario = ate.fk_Medico_fk_Funcionario_cod_funcionario
+inner join plano_de_saude pla on pla.cod_plano_de_saude = ate.fk_Plano_de_Saude_cod_plano_de_saude;
+select * from vw_medico_atende_plano;
+
 /* Triggers */
 CREATE TABLE historico_cliente (
     ID int NOT NULL AUTO_INCREMENT,
@@ -138,5 +156,5 @@ END$$
 DELIMITER ;
 
 delete from cliente where cod_cliente = '14';
-select * from cliente;
+select * from historico_cliente;
  
